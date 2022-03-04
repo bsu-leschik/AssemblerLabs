@@ -16,13 +16,13 @@ int ones(int num);
 
 int main()
 {
-    std::cout << "Hello World!\n";
-    //1010
-    int num;
-    std::cin >> num;
-    std::cout << first_ass(num) << " = " << first_cpp(num) << std::endl;
-    std::cout << second_ass(num) << " = " << second_cpp(num) << std::endl;
-    std::cout << third_ass(num) << " = " << third_cpp(num) << std::endl;
+    int num = 55;
+    //std::cin >> num;
+    //std::cout << first_ass(num) << " = " << first_cpp(num) << std::endl;
+    //std::cout << second_ass(num) << " = " << second_cpp(num) << std::endl;
+    //std::cout << third_ass(num) << " = " << third_cpp(num) << std::endl;
+    //std::cout << "---------------------------------------------------------" << std::endl;
+    std::cout << num << ones(num) << std::endl;
 
 
 }
@@ -67,18 +67,37 @@ int first_cpp(int num) {
 }
 
 int ones(int num) {
-    __int32 ten = 0b1010;
     __int32 output;
-    std::cin >> num;
     __asm {
-
-        mov EAX, num
+        mov EAX, num;
+        mov BX, 0;
         mov ECX, 10;
+        mov EDX, 0;
 
-        div EBX;
-        cmp EDX, 0;
+    S:
+        cmp EAX, 0;
+        je A;
+        div ECX;
+        mov EDX, 0;
+        add BX, 1;
+        jmp S;
+    A: 
+        mov ECX, 0;
+        mov CX, BX;
+        mov EBX, 10;
+    LSTRT:
+        mul EBX;
+        loop LSTRT;
 
-        mul ECX;
+        mul EBX;
+        mov EBX, EAX;
+
+        mov EAX, num;
+        add EAX, EBX;
+
+        mov EBX, 10;
+
+        mul EBX;
         inc EAX;
         mov output, EAX;
     }
