@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <vector>
 
 int firstTask(int a);
 int secondTask(int a, int b);
@@ -38,6 +39,7 @@ int firstTask(int a) {
         mov a1, EAX;
     }
     std::cout << "c++: " << sum << " assembler: " << a1 << std::endl;
+    return a;
 }
 
 int secondTask(int a, int b) {
@@ -88,7 +90,6 @@ int secondTask(int a, int b) {
         loop lstack;
         mov count, EAX;
     skip:
-        mov count, 0;
     }
     count /= 4;
     std::cout << count << std::endl;
@@ -96,5 +97,27 @@ int secondTask(int a, int b) {
     {
         std::cout << o[i] << " ";
     }
+    int i = 1;
 
+    std::vector<int> answers;
+    for (; i < 50; i++)
+    {
+        if (50 <= a * i) {
+            break;
+        }
+        int t = 50 - a * i;
+        double temp1 =(double) t / b;
+        int temp2 = (50 - a * i) / b;
+        if ((double)(temp1 - temp2) == 0)
+        {
+            answers.push_back((50 - a * i) / b);
+        }
+    }
+    std::cout << std::endl;
+    std::cout << answers.size() << std::endl;
+    for(int num : answers)
+    {
+        std::cout << num << " ";
+    }
+    return a;
 }
