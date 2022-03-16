@@ -3,6 +3,8 @@
 
 int firstTask(int a);
 int secondTask(int a, int b);
+void thirdTask();
+void fourthTask(int a, int b);
 
 int main()
 {
@@ -12,6 +14,8 @@ int main()
     std::cout << std::endl;
     firstTask(a);
     secondTask(a, b);
+    thirdTask();
+    fourthTask(int a, int b);
 }
 
 int firstTask(int a) {
@@ -120,4 +124,52 @@ int secondTask(int a, int b) {
         std::cout << num << " ";
     }
     return a;
+}
+
+void thirdTask() {
+    int outAsm;
+    unsigned int fibonachi[50];
+    int amount;
+    fibonachi[0] = 0;
+    fibonachi[1] = 1;
+    fibonachi[2] = 1;
+    __asm {
+        mov EAX, 1;
+        mov EBX, 1;
+        mov ECX, 12;
+        mov EDX, 0;
+    strt:
+        mov EDX, EAX;
+        add EAX, EBX;
+        jo nd;
+        mov EBX, EDX;
+        mov fibonachi[ECX], EAX;
+        add ECX, 4;
+        jmp strt;
+    nd:
+        mov amount, ECX;
+    }
+    amount /= 4;
+    std::cout << amount << std::endl;
+    for (int i = 0; i < amount; i++)
+    {
+        std::cout << fibonachi[i] << " ";
+    }
+    int a = 1, b = 0, c = 0;
+    std::cout << std::endl;
+    std::cout << "c++: ";
+    std::cout << b << " " << a << " ";
+    for (int i = 0; i < 47; i++)
+    {
+        c = a;
+        a += b;
+        std::cout << a << " ";
+        b = c;
+
+    }
+}
+
+void fourthTask(int a, int b) {
+    // a/b
+
 }
