@@ -4,13 +4,13 @@
 
 extern "C" double first_task(double, double, double);
 extern "C" double second_task(int);
-extern "C" double third_task(int);
+extern "C" double third_task(int, double);
 extern "C" double fifth_task(int);
 
 double task1(double a, double b, double d);
 double task2(int precesion);
-double task3(int precesion);
-double task4(int precesion);
+double task3(int precesion, double x);
+double task5(int precesion);
 
 int main()
 {
@@ -19,15 +19,18 @@ int main()
     int precesion = 5;
 
     std::cout << "Enter a,b,c for first task: ";
-    std::cin >> a >> b >> c;
+    //std::cin >> a >> b >> c;
     std::cout << std::endl;
     std::cout << "Enter precison for second and third tasks: ";
-    std::cin >> precesion;
-    std::cout << std::endl;
-    std::cout << "Task1: " << std::fixed << std::setprecision(10) << task1(a, b, c) << std::endl <<
+    //std::cin >> precesion;
+    double x = 2;
+    //std::cin >> x;
+    std::cout << std::endl << "Enter x for third task: ";
+    std::cout << std::endl << std::fixed << std::setprecision(10) <<
+        "Task1: " << task1(a, b, c) << std::endl <<
         "Task2: " << task2(precesion) << std::endl <<
-        "Task3: " << task3(precesion) << std::endl <<
-        "Task4: " << task4(precesion) << std::endl;
+        "Task3: " << task3(precesion, x) << std::endl <<
+        "Task4: " << task5(precesion) << std::endl;
 
 }
 
@@ -44,10 +47,12 @@ double task2(int precesion) {
     return answer;
 }
 
-double task3(int precesion) {
-    return 0;
+double task3(int precesion, double x) {
+    double answer;
+    answer = third_task(precesion, x);
+    return answer;
 }
 
-double task4(int precesion) {
+double task5(int precesion) {
     return 0;
 }

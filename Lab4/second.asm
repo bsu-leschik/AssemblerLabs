@@ -1,8 +1,6 @@
 .model flat, C 
 .const
 	twelwe real4 12.0;
-.data
-	temp real4 0.0;
 .code
 	second_task PROC, precesion: DWORD
 		mov ECX, precesion;
@@ -16,8 +14,6 @@
 		FMUL st(0), st(1);{(-1)^(k + 1)*k^2, (-1)^(k + 1), k, sum}
 		FLD1;{1, (-1)^(k + 1)*k^2, (-1)^(k + 1), k, sum}
 		FDIV st(0), st(1);{1/((-1)^(k + 1)*k^2), k^2, (-1)^(k + 1), k, sum}
-		FST temp;
-
 		FADDP st(4), st(0);{(-1)^(k + 1)*k^2, (-1)^(k + 1), k, sum}
 
 		FADDP st(0), st(0);{(-1)^(k + 1), k, sum}
