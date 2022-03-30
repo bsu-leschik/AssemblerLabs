@@ -143,6 +143,7 @@
     <ClCompile Include="Lab4.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <MASM Include="fifth.asm" />
     <MASM Include="first.asm">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
       <FileType>Document</FileType>

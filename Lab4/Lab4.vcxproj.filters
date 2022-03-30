@@ -29,5 +29,8 @@
     <MASM Include="third.asm">
       <Filter>Исходные файлы</Filter>
     </MASM>
+    <MASM Include="fifth.asm">
+      <Filter>Исходные файлы</Filter>
+    </MASM>
   </ItemGroup>
 </Project>
