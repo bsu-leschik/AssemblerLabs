@@ -29,10 +29,12 @@
 
 	_zero:
 		FLD1;
+		FMUL;
 		jmp _out;
 
 		_pow:
 		FLD ten;
+
 		_strtloop:
 			FMUL st(0), st(0);
 		loop _strtloop;

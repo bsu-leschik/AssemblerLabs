@@ -25,7 +25,7 @@ int main()
     std::cin >> precesion;
     double x = 2;
     std::cin >> x;
-    double pow = 9;
+    int pow = 0;
     std::cout << std::endl << "Enter the power for fifth task: ";
     std::cin >> pow;
     std::cout << std::endl << "Enter x for third task: ";
