@@ -19,16 +19,16 @@ int main()
     int precesion = 5;
 
     std::cout << "Enter a,b,c for first task: ";
-    std::cin >> a >> b >> c;
+    //std::cin >> a >> b >> c;
     std::cout << std::endl;
     std::cout << "Enter precison for second and third tasks: ";
-    std::cin >> precesion;
+    //std::cin >> precesion;    
+    std::cout << std::endl << "Enter x for third task: ";
     double x = 2;
-    std::cin >> x;
-    int pow = 0;
+    //std::cin >> x;
+    int pow = 6;
     std::cout << std::endl << "Enter the power for fifth task: ";
     std::cin >> pow;
-    std::cout << std::endl << "Enter x for third task: ";
     std::cout << std::endl << std::fixed << std::setprecision(10) <<
         "Task1: " << task1(a, b, c) << std::endl <<
         "Task2: " << task2(precesion) << std::endl <<

@@ -16,10 +16,21 @@
 		div two;
 		cmp EDX, 0;
 		je _even;
+
 		FLD ten;
-		FMUL;
-		mov EAX, power;
-		dec EAX;
+		mov EBX, ECX;
+		cmp ecx, 0;
+		je _afterloop;
+		_strt:
+		FMUL st(0), st(0);
+		loop _strt;
+
+		_afterloop:
+		FMUL st(0), st(1);
+		mov ECX, EBX;
+
+		xor EDX, EDX;
+		mul two;
 		jmp _start;
 	_even:
 		inc ECX;
